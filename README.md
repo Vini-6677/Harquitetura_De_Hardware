@@ -1,12 +1,11 @@
-Arquitetura de Hardware
-⚙️ Resumo do Sistema
+Resumo do Sistema
 
 Microcontrolador: ATmega328P
 Linguagem: C puro (sem Arduino)
 Alimentação: Bateria recarregável de 9V
 Comunicação: Rádio NRF24L01 para controle remoto
 
-Atuadores:
+Atuadores
 
 Motores controlados via PWM
 
@@ -14,66 +13,66 @@ MOSFETs IRLZ44N para chaveamento de potência
 
 Optoacopladores para isolamento
 
-Sistema Laser:
+Sistema Laser
 
 Emissor laser disparando a cada 1 segundo (Timer1)
 
 LDR de 20 mm para detecção de acertos
 
-Feedback:
+Feedback
 
 3 LEDs indicando “vida”
 
-Função de Jogo:
+Função de jogo
 
 Cada acerto detectado reduz 1 LED
 
 Quando todos se apagam, o carrinho “fica fora”
 
-1. 🖥 Unidade de Processamento
+1. Unidade de Processamento
 
-ATmega328P operando com Timer1 para gerar o intervalo de disparo de 1 segundo
+ATmega328P operando com Timer1 para gerar disparo de 1 segundo
 
-Controle de PWM para motores, sem uso de bibliotecas Arduino
+Controle de PWM para motores, sem Arduino
 
 Comunicação SPI com o módulo NRF24L01
 
-2. 🔋 Alimentação
+2. Alimentação
 
 Bateria recarregável de 9V
 
-Reguladores e capacitores de filtragem para estabilidade
+Reguladores e capacitores de filtragem
 
-Optoacopladores para separar parte lógica da potência
+Optoacopladores para separar lógica da potência
 
-3. 🚀 Sistema de Movimento
+3. Sistema de Movimento
 
 PWM gerado pelo ATmega328P
 
-MOSFETs IRLZ44N acionam os motores com baixa perda
+MOSFETs IRLZ44N acionam os motores
 
-Optoacoplamento evita que ruídos dos motores afetem a eletrônica
+Isolamento via optoacopladores para evitar ruído
 
-4. 🔫 Sistema Laser
+4. Sistema Laser
 
-Laser disparado automaticamente a cada 1s (via interrupção do Timer1)
+Laser disparado automaticamente a cada 1s (Timer1)
 
-LDR de 20 mm usado como sensor para detectar acertos
+LDR de 20 mm detectando acertos
 
-A cada acerto, o sistema decrementa a vida (LEDs)
+Cada acerto reduz a vida (LEDs)
 
-5. 🛰 Comunicação via Rádio
+5. Comunicação via Rádio
 
-Controle remoto usando módulo NRF24L01
+Controle usando NRF24L01
 
-O transmissor envia comandos de movimento e ações
+Transmissor envia comandos de movimento
 
-O carrinho interpreta o comando e converte em ação real via PWM
+Carrinho interpreta e converte em ação real via PWM
 
-6. 🔆 LEDs de Vida
+6. LEDs de Vida
 
-3 LEDs representam a quantidade de vida restante
+3 LEDs representam a vida restante
 
-Cada disparo detectado apaga 1 LED
+Cada disparo acertado apaga 1 LED
 
-Com 0 LEDs → movimento do carrinho é desabilitado
+Com 0 LEDs → movimento desabilitado
