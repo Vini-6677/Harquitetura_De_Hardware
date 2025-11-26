@@ -29,50 +29,50 @@ Cada acerto detectado reduz 1 LED
 
 Quando todos se apagam, o carrinho “fica fora”
 
-1. Unidade de Processamento
+1.Unidade de Processamento
 
-ATmega328P operando com Timer1 para gerar disparo de 1 segundo
+  ATmega328P operando com Timer1 para gerar disparo de 1 segundo
 
-Controle de PWM para motores, sem Arduino
+  Controle de PWM para motores, sem Arduino
 
-Comunicação SPI com o módulo NRF24L01
+  Comunicação SPI com o módulo NRF24L01
 
-2. Alimentação
+2.Alimentação
 
-Bateria recarregável de 9V
+  Bateria recarregável de 9V
 
-Reguladores e capacitores de filtragem
+  Reguladores e capacitores de filtragem
 
-Optoacopladores para separar lógica da potência
+  Optoacopladores para separar lógica da potência
 
-3. Sistema de Movimento
+3.Sistema de Movimento
 
-PWM gerado pelo ATmega328P
+  PWM gerado pelo ATmega328P
 
-MOSFETs IRLZ44N acionam os motores
+  MOSFETs IRLZ44N acionam os motores
 
-Isolamento via optoacopladores para evitar ruído
+  Isolamento via optoacopladores para evitar ruído
 
-4. Sistema Laser
+4.Sistema Laser
 
-Laser disparado automaticamente a cada 1s (Timer1)
+  Laser disparado automaticamente a cada 1s (Timer1)
 
-LDR de 20 mm detectando acertos
+  LDR de 20 mm detectando acertos
 
-Cada acerto reduz a vida (LEDs)
+  Cada acerto reduz a vida (LEDs)
 
-5. Comunicação via Rádio
+5.Comunicação via Rádio
 
-Controle usando NRF24L01
+  Controle usando NRF24L01
 
-Transmissor envia comandos de movimento
+  Transmissor envia comandos de movimento
 
-Carrinho interpreta e converte em ação real via PWM
+  Carrinho interpreta e converte em ação real via PWM
 
-6. LEDs de Vida
+6.LEDs de Vida
 
-3 LEDs representam a vida restante
+  3 LEDs representam a vida restante
 
-Cada disparo acertado apaga 1 LED
+  Cada disparo acertado apaga 1 LED
 
 Com 0 LEDs → movimento desabilitado
